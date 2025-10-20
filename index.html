@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirLines Booking System (Tolentino & Ababan)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>GaleCarl Airlines ✈️</h1>
+        </header>
+
+        <div class="progressbar">
+            <div class="step">
+                <div class="circle">1</div>
+                <p>Booking Details</p>
+            </div>
+            <div class="line"></div>
+            <div class="step">
+                <div class="circle">2</div>
+                <p>Flights</p>
+            </div>
+            <div class="line"></div>
+            <div class="step">
+                <div class="circle">3</div>
+                <p>Passengers</p>
+            </div>
+            <div class="line"></div>
+            <div class="step">
+                <div class="circle">4</div>
+                <p>Summary</p>
+            </div>
+        </div>
+
+        <div id="home" class="section active">
+            <h2>Welcome to GaleCarl Airlines ✈️</h2>
+            <p>Book your flight easily and conveniently with us.</p>
+            <button onclick="showSection('booking', 1)">Book A Flight</button>
+        </div>
+
+        <div id="booking" class="section">
+            <h2>Booking Details</h2>
+            <div class="form-group">
+                <label>From:</label><input type="text" id="from" required>
+            </div>
+            <div class="form-group">
+                <label>To:</label><input type="text" id="to" required>
+            </div>
+            <div class="form-group">
+                <label>Flight Type:</label>
+                <select id="type" onchange="toggleReturn()" required>
+                    <option value="oneway">One Way</option>
+                    <option value="roundtrip">Round Trip</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Depart Date:</label><input type="date" id="depart" required>
+            </div>
+            <div id="returnDiv" class="hidden">
+                <div class="form-group">
+                    <label>Return Date:</label><input type="date" id="return" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Passengers:</label>
+                <input type="number" id="passengers" min="1" max="50" value="1" required>
+            </div>
+            <button onclick="searchFlights()">Search Flights</button>
+            <button onclick="showSection('home', 0)">Back</button>
+        </div>
+
+        <div id="flights" class="section">
+            <h2>Available Flights</h2>
+            <div id="flightList"></div>
+            <button onclick="showSection('booking', 1)">Back</button>
+        </div>
+
+        <div id="passenger" class="section">
+            <h2>Passenger Information</h2>
+            <form id="passengerForm"></form>
+            <button onclick="submitPassenger()">Next</button>
+            <button onclick="showSection('flights', 2)">Back</button>
+        </div>
+
+        <div id="summary" class="section">
+            <h2>Booking Summary</h2>
+            <div id="summaryDetails"></div>
+            <button onclick="bookNow()">Book Now</button>
+            <button onclick="showSection('passenger', 3)">Back</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

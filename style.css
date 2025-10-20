@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef3f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.progressbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+    transition: background 0.3s, color 0.3s;
+}
+
+.step.active .circle {
+    background: #003366;
+    color: white;
+}
+
+.line {
+    width: 100px;
+    height: 2px;
+    background: #ddd;
+    margin: 0 10px;
+}
+
+.step.active+.line {
+    background: #003366;
+}
+
+.step p {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.section {
+    display: none;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section.active {
+    display: block;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input,
+select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    background: #003366;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #00224c;
+}
+
+.hidden {
+    display: none;
+}
+
+.flight-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.passenger-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #f0f7ff;
+}
+
+.passenger-card .form-group {
+    margin-bottom: 10px;
+}
